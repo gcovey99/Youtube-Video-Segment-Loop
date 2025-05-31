@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  width: 300px;
+}
+
+#loop-controls {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#loop-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding-bottom: 5px;
+
+}
+
+#loop-inputs label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#loop-inputs input {
+  width: 100px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+#loop-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  width: 100%;
+}
