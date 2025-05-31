@@ -42,7 +42,7 @@ const waitForVideo = setInterval(() => {
   }
 }, 500);
 
-// Format seconds into mm:ss or hh:mm:ss
+// Format seconds
 function formatTime(seconds) {
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);

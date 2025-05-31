@@ -28,7 +28,6 @@ document.getElementById("loop-cancel").addEventListener("click", async () => {
   });
 });
 
-// Receive message from content script to reset inputs
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === 'resetInputs') {
     document.getElementById('loop-start').value = msg.start;
