@@ -2,23 +2,30 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>YouTube Segment Loop</title>
+  <title>YouTube Video Segment Loop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="loop-controls">
-    <h3>Youtube Loop Segment Playback</h3>
-    <div id="loop-inputs">
-      <label>Start Time (hh:mm:ss): <input id="loop-start" type="text" value="0:00" /></label>
-      <label>End Time (hh:mm:ss): <input id="loop-end" type="text" value="0:10" /></label>
-    </div>
-    <div id="loop-buttons">
-      <button id="loop-toggle">Start Loop</button>
-      <button id="loop-cancel">End Loop</button>
-      <p id="loop-status" class="status-message"></p>
-    </div>
-    
+  <div id="loop-inputs">
+    <h3>Youtube Video Segment Loop</h3>
+    <p><strong>End After:</strong></p>
+    <label><input type="radio" name="duration" value="3" checked> 3 Seconds</label>
+    <label><input type="radio" name="duration" value="5"> 5 Seconds</label>
+    <label><input type="radio" name="duration" value="10"> 10 Seconds</label>
+    <label>
+      <input type="radio" name="duration" value="custom"> Custom:
+      <input type="number" id="custom-seconds" min="1" value="4" style="width: 50px;"> sec
+    </label>
   </div>
+  <div id="loop-buttons">
+  <button id="loop-toggle">Start Loop</button>
+  <button id="loop-cancel">End Loop</button>
+  <p id="loop-status" class="status-message"></p>
+  <p id="loop-start-display" class="loop-time"></p>
+</div>
+</div>
+
   <script src="popup.js"></script>
 </body>
 </html>
