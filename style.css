@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  padding: 10px;
+  padding: 5px;
   width: 300px;
 }
 
@@ -39,3 +39,18 @@ body {
   gap: 5px;
   width: 100%;
 }
+.status-message {
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 11px;
+  text-align: right;
+}
+
+.status-message.success {
+  color: green;
+}
+
+.status-message.error {
+  color: red;
+}
+

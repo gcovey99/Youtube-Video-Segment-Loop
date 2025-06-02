@@ -33,22 +33,25 @@ function messageHandler(msg) {
   if (!video) return;
 
   if (msg.action === 'startLoop') {
-    loopStart = msg.start;
-    loopEnd = msg.end;
-    looping = true;
-    video.currentTime = loopStart;
-    console.log(`Looping from ${loopStart}s to ${loopEnd}s`);
-  }
+  loopStart = msg.start;
+  loopEnd = msg.end;
+  looping = true;
+  video.currentTime = loopStart;
+  video.play(); // Plays video if paused
+ 
+}
+
 
   if (msg.action === 'cancelLoop') {
     looping = false;
-    console.log("Loop canceled");
+
     chrome.runtime.sendMessage({
       action: 'resetInputs',
       start: '0:00',
       end: formatTime(video.duration)
     });
   }
+
 }
 
 function timeUpdateHandler() {

@@ -7,6 +7,18 @@ const parseTime = (str) => {
     : parts[0];
 };
 
+const setStatus = (message, type) => {
+  const status = document.getElementById("loop-status");
+  status.textContent = message;
+  status.className = `status-message ${type}`;
+
+  // Auto clear after 3 seconds
+  setTimeout(() => {
+    status.textContent = '';
+    status.className = 'status-message';
+  }, 3000);
+};
+
 document.getElementById("loop-toggle").addEventListener("click", async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -18,6 +30,8 @@ document.getElementById("loop-toggle").addEventListener("click", async () => {
     start,
     end
   });
+
+  setStatus("Loop Started", "success");
 });
 
 document.getElementById("loop-cancel").addEventListener("click", async () => {
@@ -26,6 +40,8 @@ document.getElementById("loop-cancel").addEventListener("click", async () => {
   chrome.tabs.sendMessage(tab.id, {
     action: "cancelLoop"
   });
+
+  setStatus("Loop Canceled", "error");
 });
 
 chrome.runtime.onMessage.addListener((msg) => {

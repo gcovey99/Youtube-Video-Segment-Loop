@@ -7,14 +7,17 @@
 </head>
 <body>
   <div id="loop-controls">
+    <h3>Youtube Loop Segment Playback</h3>
     <div id="loop-inputs">
       <label>Start Time (hh:mm:ss): <input id="loop-start" type="text" value="0:00" /></label>
       <label>End Time (hh:mm:ss): <input id="loop-end" type="text" value="0:10" /></label>
     </div>
     <div id="loop-buttons">
       <button id="loop-toggle">Start Loop</button>
-      <button id="loop-cancel">Cancel Loop</button>
+      <button id="loop-cancel">End Loop</button>
+      <p id="loop-status" class="status-message"></p>
     </div>
+    
   </div>
   <script src="popup.js"></script>
 </body>
